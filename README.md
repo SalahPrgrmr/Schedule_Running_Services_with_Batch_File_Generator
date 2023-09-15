@@ -1,6 +1,6 @@
 # Schedule Running Services with Batch File Generator ( VB .NET - WINDOWS APPLICATION FORM )
 
-TechTune App (Windows Applications) : 
+# TechTune App (Windows Applications) : 
 
 The program offers a variety of services aimed at enhancing device performance and improving the user experience. Among these services:
 Network Speed Measurement: Allows the user to measure both local network and internet connection speeds. This can be valuable for ensuring connection quality and stability.
@@ -10,7 +10,9 @@ Scheduling Windows Service Startups and Shutdowns: The program can schedule the 
 Cleaning and Removing Stuck Files: The program performs cleaning tasks, allowing it to remove stuck files, temporary files that may impact system performance, and unnecessary "junk" files.
 
 This software provides valuable tools for users to contribute to improving computer performance and customizing it to their needs.
-تطبيق تيك تون ( تطبيق ويندوز سطح المكتب ):
+
+
+# تطبيق تيك تون ( تطبيق ويندوز سطح المكتب ):
 البرنامج يُقَدِّم مجموعة متنوعة من الخدمات التي تهدف إلى تحسين أداء الجهاز وتحسين تجربة المستخدم. من بين هذه الخدمات:
 قياس سرعة الشبكة: يتيح للمستخدم قياس سرعة الشبكة المحلية وسرعة الاتصال بالإنترنت. هذا يمكن أن يكون مفيدًا لضمان جودة الاتصال واستقراره.
 قياس سرعة تعبئة البطارية: يساعد في قياس كفاءة عملية شحن البطارية، مما يتيح للمستخدم معرفة ما إذا كانت البطارية تعمل بكفاءة أم إذا كان هناك حاجة لاستبدالها.
