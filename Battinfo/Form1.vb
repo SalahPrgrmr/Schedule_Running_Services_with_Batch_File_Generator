@@ -6,8 +6,11 @@ Imports System
 Imports System.Collections.Generic
 Imports System.Text
 Imports System.Net.NetworkInformation
+Imports sub_functions
+
 
 Public Class Form1
+
 
     Dim X As String = ""
     Dim Y As Int64 = 0
@@ -22,6 +25,8 @@ Public Class Form1
 
     Dim xindex As Integer
     Dim xstring As String
+    Public FilesPath As String = Application.StartupPath & "\eXtra"
+
 
     Sub Ping_test()
 
@@ -40,7 +45,6 @@ Public Class Form1
 
 
     End Sub
-
     Sub Test()
         Try
 
@@ -61,25 +65,6 @@ Public Class Form1
 
         End Try
     End Sub
-
-
-    Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Bat_Data()
-        L1.SelectedIndex = 0
-        B0.Text = 0
-        B1.Text = 0
-        B2.Text = 0
-        TIMEBEFORE1UC.Text = 0
-        MinFromStart.Text = 0
-
-
-
-        Me.Top = (Screen.PrimaryScreen.WorkingArea.Height - 230)
-        Me.Left = (Screen.PrimaryScreen.WorkingArea.Width - 195)
-        'Timer1.Enabled = True
-
-    End Sub
-
     Sub MeOnTop()
         If OnTopToolStripMenuItem.CheckState = CheckState.Checked Then
             Me.TopMost = True
@@ -98,9 +83,6 @@ Public Class Form1
             L2.Items.Add(0).ToString()
         Next
     End Sub
-
-
-
     Sub Bat_FullyCharge_calc()
         Try
 
@@ -157,7 +139,6 @@ Public Class Form1
 
         End Try
     End Sub
-
     Sub ShowBatInfo()
         If perFull * 100 > 100 Then
             ProgressBar1.Value = 100
@@ -173,20 +154,46 @@ Public Class Form1
     End Sub
 
 
+    Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Bat_Data()
+        L1.SelectedIndex = 0
+        B0.Text = 0
+        B1.Text = 0
+        B2.Text = 0
+        TIMEBEFORE1UC.Text = 0
+        MinFromStart.Text = 0
+
+
+
+        'Me.Top = (Screen.PrimaryScreen.WorkingArea.Height - 230)
+        'Me.Left = (Screen.PrimaryScreen.WorkingArea.Width - 195)
+        'Timer1.Enabled = True
+
+        fetch_files(FilesPath, ListBox1)
+
+
+    End Sub
+
+    Private Sub ListBox1_DoubleClick(sender As Object, e As EventArgs) Handles ListBox1.DoubleClick
+        selfilename.Text = ListBox1.SelectedItem
+        open_file(FilesPath & "\" & ListBox1.SelectedItem, RichTextBox1, ListBox1)
+    End Sub
+
+    Private Sub sFile_Click(sender As Object, e As EventArgs) Handles sFile.Click
+        Dim pathOfFile = FilesPath
+        Dim nameOfFile = selfilename.Text.ToString()
+        Dim textOnRich = RichTextBox1.Text.ToString()
+        save_file(nameOfFile, pathOfFile, textOnRich)
+        fetch_files(FilesPath, ListBox1)
+    End Sub
 
     Private Sub Timer1_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer1.Tick
         MeOnTop()
-        Try
+        Bat_FullyCharge_calc()
+        ShowBatInfo()
+        Test()
+        Ping_test()
 
-
-            Bat_FullyCharge_calc()
-            ShowBatInfo()
-            Test()
-            Ping_test()
-
-        Catch ex As Exception
-
-        End Try
 
 
 
@@ -217,41 +224,6 @@ Public Class Form1
     End Sub
 
 
-
-
-
-
 End Class
 
 
-
-'Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
-'    Dim status As PowerStatus = SystemInformation.PowerStatus
-'    txtChargeStatus.Text = "ChargeStatus : " & status.BatteryChargeStatus.ToString()
-'    txtFullLifetime.Text = "FullLifetime : " & If(status.BatteryFullLifetime = -1, "Unknown", status.BatteryFullLifetime.ToString())
-'    txtBatteryPercent.Text = "BatteryPercent : " & status.BatteryLifePercent.ToString("P0")
-'    txtLifeRemaining.Text = "LifeRemaining : " & If(status.BatteryLifeRemaining = -1, "Unknown", status.BatteryLifeRemaining.ToString())
-'    txtPowerLineStatus.Text = "PowerLineStatus : " & status.PowerLineStatus.ToString()
-'End Sub
-'Dim i As Integer = 0
-'If psBattery.PowerLineStatus = PowerLineStatus.Online Then
-'    ' Me.Text = "Battinfo - " & perFull * 100 & "%" & " charging!"
-'    Label1.Text = "Battinfo - " & perFull * 100 & "%" & " charging!"
-'ElseIf psBattery.PowerLineStatus = PowerLineStatus.Offline Then
-'    ' Me.Text = "Battinfo - " & perFull * 100 & "%" & " don´t charging"
-'    Label1.Text = "Battinfo - " & perFull * 100 & "%" & " don´t charging"
-'End If
-'Timer1.Interval = 10000
-
-
-
-'If CInt(xstring) Mod 2 = 0 Then
-'    Y += 1
-'Else
-'    OddXEven += 1
-'End If
-
-'B0.Text = status.BatteryLifePercent.ToString("0")
-'Y += 1
-' K += 1
-'OddXEven += 1

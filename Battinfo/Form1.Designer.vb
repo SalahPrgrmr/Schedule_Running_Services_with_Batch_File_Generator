@@ -52,6 +52,9 @@ Partial Class Form1
         Me.LPLOC = New System.Windows.Forms.Label()
         Me.LPNET = New System.Windows.Forms.Label()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
+        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.selfilename = New System.Windows.Forms.TextBox()
+        Me.sFile = New System.Windows.Forms.Button()
         Me.Menu1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -86,7 +89,6 @@ Partial Class Form1
         '
         'Timer1
         '
-        Me.Timer1.Enabled = True
         Me.Timer1.Interval = 1000
         '
         'txtChargeStatus
@@ -139,7 +141,7 @@ Partial Class Form1
         Me.L1.FormattingEnabled = True
         Me.L1.Location = New System.Drawing.Point(180, 263)
         Me.L1.Name = "L1"
-        Me.L1.Size = New System.Drawing.Size(39, 56)
+        Me.L1.Size = New System.Drawing.Size(39, 225)
         Me.L1.TabIndex = 7
         Me.L1.Visible = False
         '
@@ -148,7 +150,7 @@ Partial Class Form1
         Me.L2.FormattingEnabled = True
         Me.L2.Location = New System.Drawing.Point(224, 263)
         Me.L2.Name = "L2"
-        Me.L2.Size = New System.Drawing.Size(78, 56)
+        Me.L2.Size = New System.Drawing.Size(78, 225)
         Me.L2.TabIndex = 8
         Me.L2.Visible = False
         '
@@ -262,19 +264,19 @@ Partial Class Form1
         '
         'TPLOC
         '
-        Me.TPLOC.Location = New System.Drawing.Point(119, 325)
+        Me.TPLOC.Location = New System.Drawing.Point(338, 470)
         Me.TPLOC.Name = "TPLOC"
-        Me.TPLOC.Size = New System.Drawing.Size(100, 20)
+        Me.TPLOC.Size = New System.Drawing.Size(264, 20)
         Me.TPLOC.TabIndex = 21
-        Me.TPLOC.Text = "10.0.0.1"
+        Me.TPLOC.Text = "192.168.116.1"
         '
         'TPNET
         '
-        Me.TPNET.Location = New System.Drawing.Point(232, 326)
+        Me.TPNET.Location = New System.Drawing.Point(338, 444)
         Me.TPNET.Name = "TPNET"
-        Me.TPNET.Size = New System.Drawing.Size(100, 20)
+        Me.TPNET.Size = New System.Drawing.Size(264, 20)
         Me.TPNET.TabIndex = 22
-        Me.TPNET.Text = "www.youtube.com"
+        Me.TPNET.Text = "www.google.com"
         '
         'LPLOC
         '
@@ -297,17 +299,44 @@ Partial Class Form1
         'ListBox1
         '
         Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(398, 52)
+        Me.ListBox1.Location = New System.Drawing.Point(338, 12)
         Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(264, 420)
+        Me.ListBox1.Size = New System.Drawing.Size(180, 420)
         Me.ListBox1.TabIndex = 25
+        '
+        'RichTextBox1
+        '
+        Me.RichTextBox1.Location = New System.Drawing.Point(524, 38)
+        Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.Size = New System.Drawing.Size(374, 394)
+        Me.RichTextBox1.TabIndex = 27
+        Me.RichTextBox1.Text = ""
+        '
+        'selfilename
+        '
+        Me.selfilename.Location = New System.Drawing.Point(524, 12)
+        Me.selfilename.Name = "selfilename"
+        Me.selfilename.Size = New System.Drawing.Size(313, 20)
+        Me.selfilename.TabIndex = 28
+        '
+        'sFile
+        '
+        Me.sFile.Location = New System.Drawing.Point(843, 12)
+        Me.sFile.Name = "sFile"
+        Me.sFile.Size = New System.Drawing.Size(55, 21)
+        Me.sFile.TabIndex = 29
+        Me.sFile.Text = "Save"
+        Me.sFile.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(674, 562)
+        Me.ClientSize = New System.Drawing.Size(966, 562)
         Me.ContextMenuStrip = Me.Menu1
+        Me.Controls.Add(Me.sFile)
+        Me.Controls.Add(Me.selfilename)
+        Me.Controls.Add(Me.RichTextBox1)
         Me.Controls.Add(Me.ListBox1)
         Me.Controls.Add(Me.LPNET)
         Me.Controls.Add(Me.LPLOC)
@@ -336,10 +365,9 @@ Partial Class Form1
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Form1"
-        Me.ShowIcon = False
-        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Battary Info."
+        Me.TopMost = True
         Me.Menu1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -374,4 +402,7 @@ Partial Class Form1
     Friend WithEvents LPLOC As Label
     Friend WithEvents LPNET As Label
     Friend WithEvents ListBox1 As ListBox
+    Friend WithEvents RichTextBox1 As RichTextBox
+    Friend WithEvents selfilename As TextBox
+    Friend WithEvents sFile As Button
 End Class

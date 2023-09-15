@@ -1,0 +1,46 @@
+Schedule Running Services with Batch File Generator ( VB .NET - WINDOWS APPLICATION FORM )
+TechTune App (Windows Applications) :
+The program offers a variety of services aimed at enhancing device performance and improving the user experience. Among these services: Network Speed Measurement: Allows the user to measure both local network and internet connection speeds. This can be valuable for ensuring connection quality and stability. Battery Charging Speed Measurement: Assists in measuring battery charging efficiency, enabling users to determine whether the battery is operating efficiently or if replacement is needed. Creation and Scheduling of Patch Files: Enables users to create patch files and schedule their execution at specific times. This can be useful for automating specific tasks. Scheduling Windows Service Startups and Shutdowns: The program can schedule the startup and shutdown of Windows operating system services. This can help configure the system and enhance its performance. Cleaning and Removing Stuck Files: The program performs cleaning tasks, allowing it to remove stuck files, temporary files that may impact system performance, and unnecessary "junk" files.
+
+This software provides valuable tools for users to contribute to improving computer performance and customizing it to their needs.
+
+تطبيق تيك تون ( تطبيق ويندوز سطح المكتب ):
+البرنامج يُقَدِّم مجموعة متنوعة من الخدمات التي تهدف إلى تحسين أداء الجهاز وتحسين تجربة المستخدم. من بين هذه الخدمات: قياس سرعة الشبكة: يتيح للمستخدم قياس سرعة الشبكة المحلية وسرعة الاتصال بالإنترنت. هذا يمكن أن يكون مفيدًا لضمان جودة الاتصال واستقراره. قياس سرعة تعبئة البطارية: يساعد في قياس كفاءة عملية شحن البطارية، مما يتيح للمستخدم معرفة ما إذا كانت البطارية تعمل بكفاءة أم إذا كان هناك حاجة لاستبدالها. إنشاء وجدولة ملفات الباتش: يتيح للمستخدم إنشاء ملفات الباتش وجدولتها لتشغيلها في أوقات معينة. هذا يمكن أن يكون مفيدًا لتنفيذ مهام محددة تلقائيًا. جدولة تشغيل وإيقاف خدمات الويندوز: يمكن للبرنامج جدولة تشغيل وإيقاف خدمات نظام التشغيل ويندوز. هذا يمكن أن يساعد في ضبط تكوين النظام وتحسين أداءه. تنظيف وإزالة الملفات العالقة: يقوم البرنامج بمهمة تنظيف، حيث يمكنه إزالة الملفات العالقة والملفات المؤقتة التي قد تؤثر على أداء النظام. كما يمكنه أيضًا إزالة الملفات "الجونك" التي لم تعد ضرورية.
+
+هذا البرنامج يوفر أدوات مفيدة للمستخدم للمساهمة في تحسين أداء جهاز الكمبيوتر وضبطه وفقًا لاحتياجاته.
+
+
+
+'Protected Sub Page_Load(sender As Object, e As EventArgs) Handles Me.Load
+'    Dim status As PowerStatus = SystemInformation.PowerStatus
+'    txtChargeStatus.Text = "ChargeStatus : " & status.BatteryChargeStatus.ToString()
+'    txtFullLifetime.Text = "FullLifetime : " & If(status.BatteryFullLifetime = -1, "Unknown", status.BatteryFullLifetime.ToString())
+'    txtBatteryPercent.Text = "BatteryPercent : " & status.BatteryLifePercent.ToString("P0")
+'    txtLifeRemaining.Text = "LifeRemaining : " & If(status.BatteryLifeRemaining = -1, "Unknown", status.BatteryLifeRemaining.ToString())
+'    txtPowerLineStatus.Text = "PowerLineStatus : " & status.PowerLineStatus.ToString()
+'End Sub
+'Dim i As Integer = 0
+'If psBattery.PowerLineStatus = PowerLineStatus.Online Then
+'    ' Me.Text = "Battinfo - " & perFull * 100 & "%" & " charging!"
+'    Label1.Text = "Battinfo - " & perFull * 100 & "%" & " charging!"
+'ElseIf psBattery.PowerLineStatus = PowerLineStatus.Offline Then
+'    ' Me.Text = "Battinfo - " & perFull * 100 & "%" & " don´t charging"
+'    Label1.Text = "Battinfo - " & perFull * 100 & "%" & " don´t charging"
+'End If
+'Timer1.Interval = 10000
+
+
+
+'If CInt(xstring) Mod 2 = 0 Then
+'    Y += 1
+'Else
+'    OddXEven += 1
+'End If
+
+'B0.Text = status.BatteryLifePercent.ToString("0")
+'Y += 1
+' K += 1
+'OddXEven += 1
+
+
+
