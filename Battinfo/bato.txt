@@ -1,0 +1,18 @@
+# returning class instances:
+Get-CimInstance -ClassName Win32_Battery | Select-Object -Property DeviceID, EstimatedRunTime
+
+# reading property value:
+Get-CimInstance -ClassName Win32_Battery | Select-Object -Property DeviceID, EstimatedRunTime | Foreach-Object {
+
+  $DeviceID = $_.DeviceID
+  $value = $_.EstimatedRunTime
+  "${DeviceID}: EstimatedRunTime = $value minutes"
+  if ($value -eq 71582788)
+  {
+    'AC Power'
+  }
+  else
+  {
+    'EstimatedRunTime = {0:n1} hours' -f ($value/60)
+  }
+}
